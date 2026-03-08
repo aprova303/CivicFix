@@ -9,7 +9,7 @@ export async function GET(req, { params }) {
   try {
     await dbConnect();
 
-    const { id } = params;
+    const { id } = await params;
 
     // Debug logging
     console.log("[GET Issue API] Received params:", params);
@@ -74,7 +74,7 @@ export async function DELETE(req, { params }) {
 
     await dbConnect();
 
-    const { id } = params;
+    const { id } = await params;
 
     // Debug logging
     console.log("[DELETE Issue API] Received ID:", id);
@@ -146,7 +146,7 @@ export async function PATCH(req, { params }) {
 
     await dbConnect();
 
-    const { id } = params;
+    const { id } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json(

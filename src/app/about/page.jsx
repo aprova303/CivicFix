@@ -200,7 +200,8 @@ export default function About() {
               Browse Issues
             </button>
           </a>
-          <Link>  <button className="btn btn-lg btn-outline text-white border-white hover:bg-white/10">
+          <Link href="/how-it-works">
+            <button className="btn btn-lg btn-outline text-white border-white hover:bg-white/10">
               Learn More
             </button>
           </Link>

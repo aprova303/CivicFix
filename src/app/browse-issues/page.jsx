@@ -36,10 +36,19 @@ export default function BrowseIssuesPage() {
       }
 
       if (!response.ok) {
-        throw new Error(data.message || "Failed to fetch issues");
+        const errorMessage = data?.message || "Failed to fetch issues";
+        throw new Error(errorMessage);
       }
 
-      setIssues(Array.isArray(data) ? data : []);
+      const issuesList = Array.isArray(data) ? data : [];
+      console.log(
+        "[BrowseIssuesPage] Fetched issues count:",
+        issuesList.length,
+      );
+      if (issuesList.length > 0) {
+        console.log("[BrowseIssuesPage] Sample issue:", issuesList[0]);
+      }
+      setIssues(issuesList);
     } catch (error) {
       console.error("Fetch error:", error);
       toast.error(error.message || "Failed to load issues");
@@ -169,54 +178,56 @@ export default function BrowseIssuesPage() {
         ) : (
           <div className="grid grid-cols-1 gap-6">
             {filteredIssues.map((issue) => (
-              <Link
-                key={issue._id}
-                href={`/issues/${issue._id}`}
-                className="card bg-white shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                <div className="card-body">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                    <div className="flex-1">
-                      <h2 className="card-title text-2xl mb-2 text-gray-800">
-                        {issue.title}
-                      </h2>
-                      <p className="text-gray-600 mb-4">
-                        {issue.shortDescription}
-                      </p>
+              <div key={issue._id}>
+                <Link
+                  href={`/Issues/${issue._id}`}
+                  className="card bg-white shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                >
+                  <div className="card-body">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <h2 className="card-title text-2xl mb-2 text-gray-800">
+                          {issue.title}
+                        </h2>
+                        <p className="text-gray-600 mb-4">
+                          {issue.shortDescription}
+                        </p>
 
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        <div
-                          className={`badge badge-lg ${getPriorityBadgeColor(issue.priority)}`}
-                        >
-                          {issue.priority} Priority
-                        </div>
-                        <div
-                          className={`badge badge-lg ${getStatusBadgeColor(issue.status)}`}
-                        >
-                          {issue.status}
-                        </div>
-                        <div className="badge badge-ghost">
-                          {formatDate(issue.createdAt)}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <div
+                            className={`badge badge-lg ${getPriorityBadgeColor(issue.priority)}`}
+                          >
+                            {issue.priority} Priority
+                          </div>
+                          <div
+                            className={`badge badge-lg ${getStatusBadgeColor(issue.status)}`}
+                          >
+                            {issue.status}
+                          </div>
+                          <div className="badge badge-ghost">
+                            {formatDate(issue.createdAt)}
+                          </div>
                         </div>
                       </div>
+
+                      {issue.image && (
+                        <div className="md:w-32 md:h-32">
+                          <Image
+                            src={issue.image}
+                            alt={issue.title}
+                            className="rounded-lg w-full h-32 object-cover"
+                            width={200}
+                            height={200}
+                          />
+                        </div>
+                      )}
                     </div>
-
-                    {issue.image && (
-                      <div className="md:w-32 md:h-32">
-                        <Image
-                          src={issue.image}
-                          alt={issue.title}
-                          className="rounded-lg w-full h-32 object-cover"
-                          width={200} height={200}
-                        />
-                      </div>
-                    )}
+                    <div className="text-primary text-sm font-semibold mt-2">
+                      View Details →
+                    </div>
                   </div>
-                  <div className="text-primary text-sm font-semibold mt-2">
-                    View Details →
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         )}

@@ -16,6 +16,22 @@ const issueSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please provide a full description'],
     },
+    category: {
+      type: String,
+      default: null,
+    },
+    location: {
+      type: {
+        type: String,
+        enum: ['Point'],
+        default: 'Point',
+      },
+      coordinates: {
+        type: [Number], // [longitude, latitude]
+        default: [0, 0],
+      },
+      address: String,
+    },
     priority: {
       type: String,
       enum: ['Low', 'Medium', 'High'],
@@ -28,12 +44,25 @@ const issueSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      default: null,
+      default: "",
     },
     reportedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
+    },
+    assignedTo: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      default: null,
+    },
+    upvotes: {
+      type: Number,
+      default: 0,
+    },
+    commentsCount: {
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true }

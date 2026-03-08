@@ -27,10 +27,26 @@ const nextConfig = {
         protocol: "https",
         hostname: "*.cloudinary.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "example.com",
+      },
       // Add more as needed
       {
         protocol: "https",
         hostname: "*.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "example.com",
       },
     ],
     // Optimize images

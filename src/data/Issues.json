@@ -1,0 +1,179 @@
+[
+  {
+    "_id": "ISSUE-1001",
+    "title": "Large Pothole Near Central Market",
+    "shortDescription": "A deep pothole causing traffic disruption near the main intersection.",
+    "description": "There is a large pothole near the Central Market intersection that is causing frequent traffic congestion and minor accidents. Vehicles are swerving to avoid it which increases risk.",
+    "category": "Road Damage",
+    "location": {
+      "area": "Central Market",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4095,
+        "lng": 89.1234
+      }
+    },
+    "image": "/src/assets/banner.jpg",
+    "status": "Pending",
+    "priority": "High",
+    "reportedBy": {
+      "userId": "USER-001",
+      "name": "Ananya Prova",
+      "email": "ananya@example.com"
+    },
+    "assignedTo": null,
+    "upvotes": 12,
+    "commentsCount": 3,
+    "createdAt": "2026-03-01T10:15:00Z",
+    "updatedAt": "2026-03-01T10:15:00Z"
+  },
+  {
+    "_id": "ISSUE-1002",
+    "title": "Street Light Not Working",
+    "shortDescription": "Street light is off for 5 days near Girls School Road.",
+    "description": "The street light near Girls School Road has not been working for the past 5 days. The area becomes very dark at night and unsafe for pedestrians.",
+    "category": "Street Light",
+    "location": {
+      "area": "Girls School Road",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4082,
+        "lng": 89.1250
+      }
+    },
+  "image": "/assets/roadDamage.jpg",
+    "status": "In Progress",
+    "priority": "Medium",
+    "reportedBy": {
+      "userId": "USER-002",
+      "name": "Rahim Uddin",
+      "email": "rahim@example.com"
+    },
+    "assignedTo": {
+      "authorityId": "AUTH-01",
+      "name": "Municipal Electrical Department"
+    },
+    "upvotes": 8,
+    "commentsCount": 2,
+    "createdAt": "2026-02-27T08:30:00Z",
+    "updatedAt": "2026-02-28T12:45:00Z"
+  },
+  {
+    "_id": "ISSUE-1003",
+    "title": "Garbage Accumulation Near Bus Stand",
+    "shortDescription": "Uncollected garbage creating foul smell and health risk.",
+    "description": "Garbage has been piling up near the Kaliganj bus stand for the past week. The smell is unbearable and it may cause health issues for nearby residents and shop owners.",
+    "category": "Garbage",
+    "location": {
+      "area": "Bus Stand",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4120,
+        "lng": 89.1211
+      }
+    },
+   "image": "/assets/roadDamage.jpg",
+    "status": "Resolved",
+    "priority": "High",
+    "reportedBy": {
+      "userId": "USER-003",
+      "name": "Sadia Rahman",
+      "email": "sadia@example.com"
+    },
+    "assignedTo": {
+      "authorityId": "AUTH-02",
+      "name": "Sanitation Department"
+    },
+    "upvotes": 25,
+    "commentsCount": 5,
+    "resolutionNote": "Garbage cleared and cleaning scheduled regularly.",
+    "createdAt": "2026-02-20T09:10:00Z",
+    "updatedAt": "2026-02-22T16:20:00Z"
+  },
+  {
+    "_id": "ISSUE-1004",
+    "title": "Water Leakage From Main Pipeline",
+    "shortDescription": "Continuous water leakage near Post Office Road.",
+    "description": "A water pipeline has been leaking for 3 days near Post Office Road. Clean water is being wasted and road condition is worsening.",
+    "category": "Water Leakage",
+    "location": {
+      "area": "Post Office Road",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4070,
+        "lng": 89.1205
+      }
+    },
+    "image": "/assets/roadDamage.jpg",
+    "status": "Pending",
+    "priority": "High",
+    "reportedBy": {
+      "userId": "USER-004",
+      "name": "Mehedi Hasan",
+      "email": "mehedi@example.com"
+    },
+    "assignedTo": null,
+    "upvotes": 15,
+    "commentsCount": 4,
+    "createdAt": "2026-03-02T07:50:00Z",
+    "updatedAt": "2026-03-02T07:50:00Z"
+  },
+  {
+    "_id": "ISSUE-1005",
+    "title": "Broken Traffic Signal",
+    "shortDescription": "Traffic signal not functioning at College More.",
+    "description": "The traffic signal at College More has stopped functioning which is causing confusion and increasing accident risks during peak hours.",
+    "category": "Traffic Signal",
+    "location": {
+      "area": "College More",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4135,
+        "lng": 89.1198
+      }
+    },
+  "image": "/assets/roadDamage.jpg",
+    "status": "In Progress",
+    "priority": "High",
+    "reportedBy": {
+      "userId": "USER-005",
+      "name": "Farhana Akter",
+      "email": "farhana@example.com"
+    },
+    "assignedTo": {
+      "authorityId": "AUTH-01",
+      "name": "Traffic Control Department"
+    },
+    "upvotes": 18,
+    "commentsCount": 6,
+    "createdAt": "2026-02-25T14:20:00Z",
+    "updatedAt": "2026-02-26T11:30:00Z"
+  },
+  {
+    "_id": "ISSUE-1006",
+    "title": "Blocked Drain Causing Waterlogging",
+    "shortDescription": "Drain blockage causing water accumulation during rain.",
+    "description": "The drain near Hospital Road is blocked which causes severe waterlogging during rainfall. It makes it difficult for vehicles and pedestrians.",
+    "category": "Drainage",
+    "location": {
+      "area": "Hospital Road",
+      "city": "Kaliganj",
+      "coordinates": {
+        "lat": 23.4111,
+        "lng": 89.1185
+      }
+    },"image": "/assets/roadDamage.jpg",
+    "status": "Pending",
+    "priority": "Medium",
+    "reportedBy": {
+      "userId": "USER-006",
+      "name": "Tanvir Islam",
+      "email": "tanvir@example.com"
+    },
+    "assignedTo": null,
+    "upvotes": 9,
+    "commentsCount": 1,
+    "createdAt": "2026-03-03T09:00:00Z",
+    "updatedAt": "2026-03-03T09:00:00Z"
+  }
+]

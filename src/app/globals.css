@@ -1,0 +1,33 @@
+@import "tailwindcss";
+ @plugin "daisyui" {
+   themes: light --default;
+ }
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+/* Brand (Trust & Civic Identity) */
+--color-primary: oklch(55% 0.18 250);       
+--color-secondary: oklch(65% 0.14 220);     
+--color-accent: oklch(75% 0.12 200);       
+
+/* Base (Clean Government Feel) */
+--color-base-100: oklch(99% 0.003 240);     
+--color-base-200: oklch(96% 0.008 240);     
+--color-base-300: oklch(92% 0.015 240);     
+
+/* Neutral (Text & UI Elements) */
+--color-neutral: oklch(30% 0.02 250);       
+--color-neutral-content: oklch(98% 0 0);   
+
+/* Feedback (Status System) */
+--color-success: oklch(65% 0.18 155);       
+--color-warning: oklch(75% 0.16 85);       
+--color-error: oklch(60% 0.22 25);          
+--color-info: oklch(70% 0.15 230);         
+ }
+
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
+
+

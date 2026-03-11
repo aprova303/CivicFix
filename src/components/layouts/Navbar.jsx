@@ -14,27 +14,69 @@ const Navbar = () => {
     await signOut({ redirect: true, callbackUrl: "/" });
   };
 
+  // const nav = (
+  //   <>
+  //     <li>
+  //       <NavLink href="/">Home</NavLink>
+  //     </li>
+  //     <li>
+  //       <NavLink href="/about-us">About Us</NavLink>
+  //     </li>
+  //     <li>
+  //       <NavLink href="/browse-issues">Browse Issues</NavLink>
+  //     </li>
+  //     <li>
+  //       <NavLink href="/contact-us">Contact Us</NavLink>
+  //     </li>
+  //     {session && (
+  //       <>
+  //         <li>
+  //           <NavLink href="/report">Report Issue</NavLink>
+  //         </li>
+  //         <li>
+  //           <NavLink href="/manage">My Issues</NavLink>
+  //         </li>
+  //       </>
+  //     )}
+  //   </>
+  // );
+
+  // Inside your Navbar.jsx
+  const closeMenu = () => setIsOpen(false);
+
   const nav = (
     <>
       <li>
-        <NavLink href="/">Home</NavLink>
+        <NavLink href="/" onClick={closeMenu}>
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink href="/about-us">About Us</NavLink>
+        <NavLink href="/about-us" onClick={closeMenu}>
+          About Us
+        </NavLink>
       </li>
       <li>
-        <NavLink href="/browse-issues">Browse Issues</NavLink>
+        <NavLink href="/browse-issues" onClick={closeMenu}>
+          Browse Issues
+        </NavLink>
       </li>
       <li>
-        <NavLink href="/contact-us">Contact Us</NavLink>
+        <NavLink href="/contact-us" onClick={closeMenu}>
+          Contact Us
+        </NavLink>
       </li>
       {session && (
         <>
           <li>
-            <NavLink href="/report">Report Issue</NavLink>
+            <NavLink href="/report" onClick={closeMenu}>
+              Report Issue
+            </NavLink>
           </li>
           <li>
-            <NavLink href="/manage">My Issues</NavLink>
+            <NavLink href="/manage" onClick={closeMenu}>
+              My Issues
+            </NavLink>
           </li>
         </>
       )}
@@ -45,7 +87,7 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <div
               tabIndex={0}
               role="button"
@@ -75,8 +117,40 @@ const Navbar = () => {
                 {nav}
               </ul>
             )}
+          </div> */}
+
+          {/* new mobile menu */}
+          <div className="lg:hidden relative">
+            <button
+              className="btn btn-ghost"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </button>
+
+            {isOpen && (
+              <ul className="menu menu-sm absolute left-0 top-full mt-2 z-[50] p-2 shadow-xl bg-base-100 rounded-box w-52 border border-base-200">
+                {nav}
+              </ul>
+            )}
           </div>
-          <Logo />
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Logo />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{nav}</ul>

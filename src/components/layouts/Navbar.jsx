@@ -20,7 +20,13 @@ const Navbar = () => {
         <NavLink href="/">Home</NavLink>
       </li>
       <li>
+        <NavLink href="/about-us">About Us</NavLink>
+      </li>
+      <li>
         <NavLink href="/browse-issues">Browse Issues</NavLink>
+      </li>
+      <li>
+        <NavLink href="/contact-us">Contact Us</NavLink>
       </li>
       {session && (
         <>

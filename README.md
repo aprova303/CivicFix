@@ -29,12 +29,14 @@ CivicFix is a community-driven platform that empowers citizens to report and res
 ## Project Overview
 
 CivicFix aims to:
+
 - Increase civic engagement and community awareness
 - Provide a transparent system for tracking local issues
 - Enable efficient communication between citizens and authorities
 - Create a collaborative environment for community problem-solving
 
 **Key Stats:**
+
 - Full-stack web application with authentication
 - RESTful API with external service integration
 - Responsive design for mobile and desktop users

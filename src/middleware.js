@@ -7,7 +7,7 @@ export async function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
   // Protected routes
-  const protectedRoutes = ['/report', '/manage'];
+  const protectedRoutes = ['/report', '/manage', '/contact-us'];
 
   if (protectedRoutes.some((route) => pathname.startsWith(route))) {
     if (!token) {

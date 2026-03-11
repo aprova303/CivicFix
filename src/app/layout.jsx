@@ -1,4 +1,10 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Poppins,
+  Noto_Sans,
+  Comfortaa,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
@@ -6,6 +12,16 @@ import Providers from "@/components/Providers";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const notoSans = Noto_Sans({
+  weight: ["100", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-noto-sans",
+});
+
+const comfortaa = Comfortaa({
+  weight: ["300", "400", "700"],
+  variable: "--font-comfortaa",
 });
 
 const geistSans = Geist({
@@ -27,7 +43,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased bg-base-100`}>
+      <body
+        className={`${poppins.className} ${notoSans.variable} ${comfortaa.variable} antialiased bg-base-100`}
+      >
         <Providers>
           <header className="py-4 sticky top-0 z-50 bg-base-100 border-b border-base-200">
             <nav className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
